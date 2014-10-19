@@ -88,6 +88,10 @@ class OBD < EventMachine::Connection
     puts "< Got connection"
   end
 
+  def unbind
+    puts "| Lost connection"
+  end
+
   def receive_data(data)
     key = data.chomp.upcase
     puts "< #{key}"
